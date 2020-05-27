@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}
+
+
+<head>
+    <meta charset="utf-8">
+    <title>Логин</title>
+    <link rel="stylesheet" href="~/css/Login.css">
+</head>
+
+
+<body>
+
+    <div class="container">
+        <div class="form">
+            <h2>Авторизация</h2>
+            <form>
+                <div class="inputBox">
+                    <input type="" placeholder="Е-мейл">
+                </div>
+                <div class="inputBox">
+                    <input type="password" placeholder="Пароль">
+                </div>
+                <div class="inputBox">
+                    <input type="submit" value="Войти">
+                    <input type="submit" value="Регистрация" asp-action="Registration" asp-controller="Home"> 
+                </div>
+                <p>Забыли пароль? <a href="#">Нажмите сюда</a></p>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+
