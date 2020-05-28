@@ -10,6 +10,19 @@ namespace NeonMarket.Controllers
     public class AuthenticationController : Controller
     {
 
+
+
+
+        public IActionResult LoginREST()
+        {
+            return View();
+        }
+
+        public IActionResult RegisterCustomerREST()
+        {
+            return View();
+        }
+
         public IActionResult Login()
         {
             return View();
