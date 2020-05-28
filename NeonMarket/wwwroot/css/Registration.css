@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #000000;
+    background: #000;
     font-family: 'MV Boli';
 }
 
@@ -13,7 +13,7 @@
 .container {
     position: relative;
     width: 450px;
-    min-height: 500px;
+    min-height: 600px;
     background: rgba(255,255,255,0.05);
     box-shadow: 0 5px 15px rgba(0,0,0,1);
 }
@@ -68,21 +68,22 @@
 }
 
 .form .inputBox input[type = "submit"] {
-    background: #fff;
+    /*background: #E0FFFF;*/
     color: #000;
     border: none;
     font-weight: 900;
     max-width: 180px;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 .form p {
     color: #eee;
 }
 
-.form p a {
+    .form p a {
         color: #fff;
-}
+    }
 
 .container::after {
     content: '';
@@ -106,6 +107,7 @@
     }
 }
 
+
 .neonbtn {
     margin: 0;
     padding: 0;
@@ -116,16 +118,16 @@
     font-family: Consolas;
 }
 
-.neonbtn input {
+    .neonbtn input {
         text-align: center;
         color: #2196f3;
         font-size: 20px;
         overflow: hidden;
         transition: 0.2s;
-}
+    }
 
-.neonbtn input:hover {
+        .neonbtn input:hover {
             color: #255784;
             background: #2196f3;
             box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
-}
+        }

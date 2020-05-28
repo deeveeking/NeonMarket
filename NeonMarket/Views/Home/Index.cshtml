@@ -1,14 +1,97 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+   
 }
 
-<div class="text-center">
-    <p> <a asp-action="Login" asp-controller="Authentication">Вход</a></p>
-    <p> <a asp-action="RegisterCustomer" asp-controller="Authentication">Регистрация</a></p>
 
-    @if (User.Identity.IsAuthenticated) 
-    { 
-        <p>Юзер авторизированый</p>
-    }
 
-</div>
+    <head>
+
+        <link rel="stylesheet" href="~/css/Header.css">
+    </head>
+    <body>
+
+
+        <div class="navigation">
+            <div class="logo">
+                <img src="~/img/logotype.png" class="logotype">
+            </div>
+
+            <div class="nav-menu">
+                <ul class="menu">
+                    <li class="nav-item"><a href="#" class="nav-link">Мужчины</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Женщины</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Парни</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Девушки</a></li>
+                </ul>
+            </div>
+
+            <div class="search-block">
+                <div class="searsh">
+                    <input type="text" class="search-form" placeholder="Поиск">
+                    <a href="#" class="search-btn"><i class="fas fa-search"></i></a>
+                </div>
+            </div>
+
+            <div class="personal-item">
+                <div class="auth">
+                    <div class="login">
+                        <a href="#" class="auth-link"><i class="fas fa-user-circle"></i>Войти</a>
+                    </div>
+                    <div class="car">
+                        <a href="#" class="auth-link"><i class="fas fa-shopping-cart"></i>Корзина</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-information">
+            <div class="text-inform">
+                <h1>The new <strong>990</strong></h1>
+                <p class="tagline">Их носят супермодели в Лондоне и отцы в Огайо</p>
+                <div class="inform-link">
+                    <div class="inform-btn read">Читать далее</div>
+                    <div class="inform-btn shop">Купить сейчас</div>
+                </div>
+            </div>
+
+            <div class="photo-model">
+                <img src="~/img/model.png">
+            </div>
+        </div>
+
+        <div class="social">
+            <div class="find">
+                <a href="#"><i class="fas fa-map-marker-alt"></i>Найти магазин</a>
+            </div>
+
+            <div class="social-menu">
+                <h4 class="connect">оставайся на связи</h4>
+
+                <ul class="social-icon">
+                    <li><a href="#" class="social-link"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="#" class="social-link"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#" class="social-link"><i class="fab fa-pinterest"></i></a></li>
+                    <li><a href="#" class="social-link"><i class="fab fa-youtube"></i></a></li>
+                    <li><a href="#" class="social-link"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+        @*<div class="text-center">
+            <p> <a asp-action="Login" asp-controller="Authentication">Вход</a></p>
+            <p> <a asp-action="RegisterCustomer" asp-controller="Authentication">Регистрация</a></p>
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                <p>Юзер авторизированый</p>
+            }
+
+        </div>*@
+
+
+    </body>
