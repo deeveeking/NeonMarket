@@ -38,6 +38,7 @@ namespace NeonMarket
             string connection = Configuration.GetConnectionString("SQLServerConnection");
             services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(connection));
 
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<IAuthenticationService, AuthenticationService>();
 
             services.AddIdentity<User, IdentityRole>(opts =>
@@ -50,7 +51,7 @@ namespace NeonMarket
 
 
                 opts.User.RequireUniqueEmail = true;
-                opts.User.AllowedUserNameCharacters = "abcd....@"; // допустимые символы
+                opts.User.AllowedUserNameCharacters = "0123456789+"; // допустимые символы
 
 
             })
@@ -108,12 +109,12 @@ namespace NeonMarket
             app.UseAuthentication();
             app.UseAuthorization();
 
-            app.UseCookiePolicy(new CookiePolicyOptions
+          /*  app.UseCookiePolicy(new CookiePolicyOptions
             {
-                MinimumSameSitePolicy = SameSiteMode.Strict,
-                HttpOnly = HttpOnlyPolicy.Always,
+              //  MinimumSameSitePolicy = SameSiteMode.Strict,
+              //  HttpOnly = HttpOnlyPolicy.Always,
                 Secure = CookieSecurePolicy.Always
-            });
+            });*/
 
 
             // Наша кастомная midleware для того шоб рать токен безопасноти из куки и вставлять його в заголовок входящого запроса
