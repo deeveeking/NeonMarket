@@ -34,10 +34,10 @@ namespace NeonMarket.Services
 
             User user = new User
             {
-                //Name = model.Name,
-                //Surname = model.Surname,
-                //UserName = model.Email,
-                //PhoneNumber = model.PhoneNumber
+                Name = model.User.Name,
+                Surname = model.User.Surname,
+                UserName = model.User.Email,
+                PhoneNumber = model.User.PhoneNumber
             };
 
 
