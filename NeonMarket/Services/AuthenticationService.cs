@@ -36,7 +36,8 @@ namespace NeonMarket.Services
             {
                 Name = model.User.Name,
                 Surname = model.User.Surname,
-                UserName = model.User.Email,
+                Email = model.User.Email,
+                UserName = model.User.PhoneNumber,
                 PhoneNumber = model.User.PhoneNumber
             };
 

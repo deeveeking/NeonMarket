@@ -18,10 +18,12 @@ namespace NeonMarket.Controllers
     {
 
         private IAuthenticationService authenticationService;
+        private IHttpContextAccessor httpContextAccessor;
 
-        public AuthenticationController(IAuthenticationService authenticationService)
+        public AuthenticationController(IAuthenticationService authenticationService, IHttpContextAccessor httpContextAccessor)
         {
             this.authenticationService = authenticationService;
+            this.httpContextAccessor = httpContextAccessor;
         }
 
 
@@ -74,10 +76,10 @@ namespace NeonMarket.Controllers
 
 
             // save into cookies
-            HttpContext.Response.Cookies.Append(".AspNetCore.Application.Id", access_token,
+            httpContextAccessor.HttpContext.Response.Cookies.Append(".AspNetCore.Application.Id", access_token,
                 new CookieOptions
                 {
-                    MaxAge = TimeSpan.FromMinutes(60)
+                 //   MaxAge = TimeSpan.FromMinutes(60)
                 }
             );
 
