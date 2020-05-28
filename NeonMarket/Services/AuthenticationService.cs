@@ -34,17 +34,17 @@ namespace NeonMarket.Services
 
             User user = new User
             {
-                Name = model.User.Name,
-                Surname = model.User.Surname,
-                UserName = model.User.Email,
-                PhoneNumber = model.User.PhoneNumber
+                //Name = model.Name,
+                //Surname = model.Surname,
+                //UserName = model.Email,
+                //PhoneNumber = model.PhoneNumber
             };
 
 
             return await this.userManager.CreateAsync(user, model.Password);
         }
 
-       
+
 
         public async Task<bool> IsInRole(User user, string role)
         {
