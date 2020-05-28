@@ -5,7 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.CookiePolicy;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -63,6 +65,7 @@ namespace NeonMarket
             {
 
                 options.RequireHttpsMetadata = false;
+                options.SaveToken = true;
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
                     // укзывает, будет ли валидироваться издатель при валидации токена
@@ -84,6 +87,8 @@ namespace NeonMarket
                 };
             });
 
+
+            
             services.AddControllersWithViews();
         }
 
@@ -98,6 +103,29 @@ namespace NeonMarket
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseCookiePolicy(new CookiePolicyOptions
+            {
+                MinimumSameSitePolicy = SameSiteMode.Strict,
+                HttpOnly = HttpOnlyPolicy.Always,
+                Secure = CookieSecurePolicy.Always
+            });
+
+
+            // Наша кастомная midleware для того шоб рать токен безопасноти из куки и вставлять його в заголовок входящого запроса
+            app.Use(async (context, next) =>
+            {
+                var token = context.Request.Cookies[".AspNetCore.Application.Id"];
+                if (!string.IsNullOrEmpty(token)) 
+                {
+                    context.Request.Headers.Add("Authorization", "Bearer " + token);
+                }
+
+                await next();
+            });
+
+
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
