@@ -3,5 +3,12 @@
 }
 
 <div class="text-center">
-    <p> <a asp-action="Login" asp-controller="Authentication">ТЕСТ</a></p>
+    <p> <a asp-action="Login" asp-controller="Authentication">Вход</a></p>
+    <p> <a asp-action="RegisterCustomer" asp-controller="Authentication">Регистрация</a></p>
+
+    @if (User.Identity.IsAuthenticated) 
+    { 
+        <p>Юзер авторизированый</p>
+    }
+
 </div>

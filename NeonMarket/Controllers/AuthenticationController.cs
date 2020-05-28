@@ -24,8 +24,20 @@ namespace NeonMarket.Controllers
             this.authenticationService = authenticationService;
         }
 
-        [HttpPost]
+
         public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Login(LoginCustomerVM model)
+        {
+            return View();
+        }
+
+
+        public IActionResult RegisterCustomer() 
         {
             return View();
         }

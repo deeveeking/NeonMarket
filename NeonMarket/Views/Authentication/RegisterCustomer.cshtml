@@ -1,4 +1,5 @@
-﻿
+﻿@model RegisterCustomerVM
+
 @{
     ViewData["Title"] = "Registation";
 }
@@ -15,25 +16,34 @@
     <div class="container">
         <div class="form">
             <h2>Регистрация</h2>
-            <form>
+            <form asp-controller="Authentication" asp-action="RegisterCustomer">
+
+                <div asp-validation-summary="ModelOnly"></div>
+
                 <div class="inputBox">
-                    <input type="text" placeholder="Имя">
+                    <input type="text" placeholder="Имя" asp-for="User.Name">
                 </div>
+
                 <div class="inputBox">
-                    <input type="text" placeholder="Фамилия">
+                    <input type="text" placeholder="Фамилия" asp-for="User.Surname">
                 </div>
+
                 <div class="inputBox">
-                    <input type="" placeholder="Е-мейл">
+                    <input type="" placeholder="Е-мейл" asp-for="User.Email">
                 </div>
+
                 <div class="inputBox">
-                    <input type="" placeholder="Номер телефона">
+                    <input type="" placeholder="Номер телефона" asp-for="User.PhoneNumber">
                 </div>
+
                 <div class="inputBox">
-                    <input type="password" placeholder="Пароль">
+                    <input type="password" placeholder="Пароль" asp-for="Password">
                 </div>
+
                 <div class="inputBox">
                     <input type="submit" value="Зарегестрироваться">
                 </div>
+
                 <p>Есть аккаунт? <a href="#">Нажмите сюда</a></p>
             </form>
         </div>

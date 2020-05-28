@@ -14,7 +14,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using NeonMarket.Interfaces;
 using NeonMarket.Models;
+using NeonMarket.Services;
 
 namespace NeonMarket
 {
@@ -35,6 +37,8 @@ namespace NeonMarket
 
             string connection = Configuration.GetConnectionString("SQLServerConnection");
             services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(connection));
+
+            services.AddTransient<IAuthenticationService, AuthenticationService>();
 
             services.AddIdentity<User, IdentityRole>(opts =>
             {

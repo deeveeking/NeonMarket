@@ -7,5 +7,7 @@ namespace NeonMarket.ViewModels.AuthenticationRelated
 {
     public class LoginCustomerVM
     {
+        public string Email { get; set; }
+        public string Password { get; set; }
     }
 }
