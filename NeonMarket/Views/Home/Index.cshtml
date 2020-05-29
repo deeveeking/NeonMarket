@@ -1,54 +1,67 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
-   
+
 }
 
 
 
     <head>
 
-        <link rel="stylesheet" href="~/css/Header.css">
+        <link rel="stylesheet" href="~/css/MainPage.css">
+        
     </head>
-    <body>
 
 
+
+
+
+
+<body>
+
+    <header>
+        
         <div class="navigation">
             <div class="logo">
-                <img src="~/img/logotype.png" class="logotype">
+                <img src="~/img/logotype.png" alt="" class="logotype">
             </div>
 
             <div class="nav-menu">
                 <ul class="menu">
-                    <li class="nav-item"><a href="#" class="nav-link">Мужчины</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Женщины</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Парни</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Девушки</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Домой</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Доставка</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">О Нас</a></li>
                 </ul>
             </div>
 
             <div class="search-block">
                 <div class="searsh">
                     <input type="text" class="search-form" placeholder="Поиск">
-                    <a href="#" class="search-btn"><i class="fas fa-search"></i></a>
+                    <a href="#" class="search-btn"><i class="fas fa-search">Найти</i></a>
                 </div>
             </div>
 
             <div class="personal-item">
-                <div class="auth">
+                <div class="nav-menu2">
+                    <ul class="menu2">
+                        <li class="nav-item2"><a href="#" class="nav-link">Вход</a></li>
+                        <li class="nav-item2"><a href="#" class="nav-link">Корзина</a></li>
+                    </ul>
+                </div>
+                @*<div class="auth">
                     <div class="login">
                         <a href="#" class="auth-link"><i class="fas fa-user-circle"></i>Войти</a>
                     </div>
                     <div class="car">
                         <a href="#" class="auth-link"><i class="fas fa-shopping-cart"></i>Корзина</a>
                     </div>
-                </div>
+                </div>*@
             </div>
         </div>
 
         <div class="main-information">
             <div class="text-inform">
                 <h1>The new <strong>990</strong></h1>
-                <p class="tagline">Их носят супермодели в Лондоне и отцы в Огайо</p>
+                <p class="tagline">БЛА БЛА БЛА</p>
                 <div class="inform-link">
                     <div class="inform-btn read">Читать далее</div>
                     <div class="inform-btn shop">Купить сейчас</div>
@@ -56,7 +69,7 @@
             </div>
 
             <div class="photo-model">
-                <img src="~/img/model.png">
+                <img src="~/img/model.png" alt="">
             </div>
         </div>
 
@@ -66,7 +79,7 @@
             </div>
 
             <div class="social-menu">
-                <h4 class="connect">оставайся на связи</h4>
+               
 
                 <ul class="social-icon">
                     <li><a href="#" class="social-link"><i class="fab fa-facebook"></i></a></li>
@@ -77,12 +90,14 @@
                 </ul>
             </div>
         </div>
+      
+
+    </header>
 
 
 
 
-
-        @*<div class="text-center">
+    @*<div class="text-center">
             <p> <a asp-action="Login" asp-controller="Authentication">Вход</a></p>
             <p> <a asp-action="RegisterCustomer" asp-controller="Authentication">Регистрация</a></p>
 
@@ -94,4 +109,4 @@
         </div>*@
 
 
-    </body>
+</body>

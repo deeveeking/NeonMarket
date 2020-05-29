@@ -130,16 +130,16 @@
     font-family: Consolas;
 }
 
-    .neonbtn input {
+.neonbtn input {
         text-align: center;
         color: #2196f3;
         font-size: 20px;
         overflow: hidden;
         transition: 0.2s;
-    }
+}
 
-        .neonbtn input:hover {
+.neonbtn input:hover {
             color: #255784;
             background: #2196f3;
             box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
-        }
+}
